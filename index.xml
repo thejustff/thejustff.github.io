@@ -470,6 +470,76 @@ $$</description>
 &lt;/div&gt;</description>
         </item>
         <item>
+        <title></title>
+        <link>https://thejustff.github.io/p/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://thejustff.github.io/p/</guid>
+        <description>&lt;p&gt;以下是 Hugo 项目自动部署的 完整流程解析（以 GitHub Actions 为例），从代码提交到网站发布的每一步详细说明：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;本地开发与代码提交
+操作：在本地编写 Hugo 内容（Markdown 文件、模板、配置等），通过 git add 和 git commit 提交到本地仓库。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;关键点：&lt;/p&gt;
+&lt;p&gt;Hugo 源码（Markdown 文件、主题、配置）存放在仓库的 main 分支。&lt;/p&gt;
+&lt;p&gt;静态网站文件（public/ 目录）不提交到源码分支（通常通过 .gitignore 忽略）。&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;推送代码到 GitHub 仓库
+操作：执行 git push 将本地提交推送到远程仓库（如 thejustff/hugo-main）。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;触发条件：GitHub 仓库收到新提交后，自动检测到 .github/workflows 下的 YAML 配置文件，启动 GitHub Actions 工作流。&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;GitHub Actions 自动执行部署流程
+以下是典型的 Workflow 步骤（以 .github/workflows/deploy.yml 为例）：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;步骤 1：拉取仓库代码
+yaml&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;name: Checkout
+uses: actions/checkout@v4
+with:
+submodules: recursive  # 若使用 Git 子模块（如主题）
+作用：将仓库代码下载到 GitHub Actions 的虚拟运行环境（如 Ubuntu）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;步骤 2：安装 Hugo
+yaml&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;name: Setup Hugo
+uses: peaceiris/actions-hugo@v2
+with:
+hugo-version: &amp;rsquo;latest&amp;rsquo;  # 或指定版本 &amp;lsquo;0.110.0&amp;rsquo;
+作用：在虚拟环境中安装指定版本的 Hugo。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;步骤 3：生成静态网站
+yaml&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;name: Build
+run: hugo &amp;ndash;minify  # 生成优化后的静态文件到 public/ 目录
+作用：运行 hugo 命令，将 Markdown 内容转换为 HTML/CSS/JS 等静态文件，输出到 public/。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;步骤 4：部署到 GitHub Pages
+yaml&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;name: Deploy
+uses: peaceiris/actions-gh-pages@v4
+with:
+github_token: ${{ secrets.GITHUB_TOKEN }}  # 或使用 PAT
+publish_dir: ./public      # 静态文件目录
+publish_branch: gh-pages   # 目标分支（可以是当前仓库或外部仓库）
+&lt;h1 id=&#34;external_repository-thejustffthejustffgithubio---跨仓库部署时启用&#34;&gt;external_repository: thejustff/thejustff.github.io  # 跨仓库部署时启用
+&lt;/h1&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;作用：将 public/ 目录中的内容推送到指定的分支或仓库，触发 GitHub Pages 自动更新。&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;GitHub Pages 自动发布网站
+流程：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;GitHub 检测到目标分支（如 gh-pages 或 main）有更新。&lt;/p&gt;
+&lt;p&gt;自动将静态文件托管到 https://&lt;username&gt;.github.io/&lt;repo&gt; 或 https://&lt;username&gt;.github.io（专属仓库）。&lt;/p&gt;
+&lt;p&gt;访问网站：用户可通过浏览器访问生成的 URL 查看最新内容。&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Links</title>
         <link>https://thejustff.github.io/links/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
