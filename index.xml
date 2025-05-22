@@ -7,7 +7,31 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>leon</copyright>
-        <lastBuildDate>Sun, 18 May 2025 15:30:21 +0800</lastBuildDate><atom:link href="https://thejustff.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 22 May 2025 23:18:57 +0800</lastBuildDate><atom:link href="https://thejustff.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>AutoDeployTest3</title>
+        <link>https://thejustff.github.io/p/autodeploytest3/</link>
+        <pubDate>Thu, 22 May 2025 23:18:57 +0800</pubDate>
+        
+        <guid>https://thejustff.github.io/p/autodeploytest3/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>AutoTest2</title>
+        <link>https://thejustff.github.io/p/autotest2/</link>
+        <pubDate>Thu, 22 May 2025 23:00:24 +0800</pubDate>
+        
+        <guid>https://thejustff.github.io/p/autotest2/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>AtuoDeployTest</title>
+        <link>https://thejustff.github.io/p/atuodeploytest/</link>
+        <pubDate>Sun, 18 May 2025 22:45:07 +0800</pubDate>
+        
+        <guid>https://thejustff.github.io/p/atuodeploytest/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>MyFirstBlog</title>
         <link>https://thejustff.github.io/p/myfirstblog/</link>
         <pubDate>Sun, 18 May 2025 15:30:21 +0800</pubDate>
